@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h1>Calculator JS</h1>
+
+    <p>
+        Number :<input type="number" id="firstNb" name="firstNb">
+    </p>
+    <p>
+        + <input type="radio" id="add" name="operator">
+        - <input type="radio" id="sub" name="operator">
+        * <input type="radio" id="mult" name="operator">
+        / <input type="radio" id="div" name="operator">
+    </p>
+    <p>
+        Number :<input type="number" id="secondNb" name="secondNb">
+    </p>
+    <p>
+        <input type="submit" onclick="calcul()" id="valider" value="valider" name="valider"/>
+    </p>
+    <p>
+        <h2>Result</h2>
+        <div id="show"></div>
+    </p>
+</body>
+
+<script type="text/javascript" src="script.js"></script>
+<script>
+
+    function calcul(){
+        var fnb = parseInt(document.getElementById('firstNb').value);
+        var snb = parseInt(document.getElementById('secondNb').value);
+
+        if(document.getElementById('add').checked){
+            var addition = fnb + snb;
+            document.getElementById('show').innerHTML = addition;
+        }
+        else if(document.getElementById('sub').checked){
+        var substraction = fnb - snb;
+        document.getElementById('show').innerHTML = substraction;
+        }
+        else if(document.getElementById('mult').checked){
+        var multiplication = fnb * snb;
+        document.getElementById('show').innerHTML = multiplication;
+        }
+        else if(document.getElementById('div').checked){
+        var division = fnb / snb;
+        document.getElementById('show').innerHTML = division;
+        }
+        
+    }
+
+</script>
+
+</html>
